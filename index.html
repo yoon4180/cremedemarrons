@@ -1,11 +1,268 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>크렘드마롱 리디자인</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        window.onload = () => {
+            //메인비주얼 슬라이드
+            var swiper = new Swiper(".MainSlide", {
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    clickable: true,
+                },
+            });//메인비주얼 슬라이드 end
+
+        };//scipt end
+    </script>
+
 </head>
+
 <body>
-    
+    <!-- 헤더, 메인, 하단고정, 푸터 -->
+    <div id="wrap">
+
+        <header class="header">
+            <div class="inner">
+                <div class="header_nav">
+                    <button class="menu_btn">
+                        <img src="img/icon-menu.png" alt="메뉴열기">
+                    </button><!-- menu_btn -->
+                    <button class="close_btn">
+                        <img src="img/icon-close.png" alt="메뉴닫기">
+                    </button><!-- close_btn -->
+                    <h1 class="logo">
+                        <a href="#"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
+                    </h1><!-- logo -->
+                    <div class="util">
+                        <button class="cart_btn">
+                            <img src="img/icon-cart.png" alt="카트">
+                        </button><!-- cart_btn -->
+                        <button class="mypage_btn">
+                            <img src="img/icon-my.png" alt="마이페이지">
+                        </button><!-- mypage_btn -->
+                    </div><!-- util -->
+                </div><!-- header_nav -->
+
+                <nav class="nav">
+                    <div class="search_wrap">
+                        <input type="text" name="" id="">
+                        <img src="img/icon-search.png" alt="검색">
+                    </div><!-- search_wrap -->
+
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">
+                                SHOP<img src="img/icon-down.png" alt="상세열기">
+                            </a>
+                            <ul class="depth-02">
+                                <li><a href="#">· All</a></li>
+                                <li><a href="#">· Best</a></li>
+                                <li><a href="#">· 단품</a></li>
+                                <li><a href="#">· 선물세트</a></li>
+                                <li><a href="#">· 마롱글라세</a></li>
+                                <li><a href="#">· 벌크(업소용)</a></li>
+                                <li><a href="#">· 정기구독</a></li>
+                                <li><a href="#">· 대량주문</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">
+                                EVENT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">
+                                BRAND<img src="img/icon-down.png" alt="상세열기">
+                            </a>
+                            <ul class="depth-02">
+                                <li><a href="#">· 소개</a></li>
+                                <li><a href="#">· 매장안내</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">
+                                COMMUNITY<img src="img/icon-down.png" alt="상세열기">
+                            </a>
+                            <ul class="depth-02">
+                                <li><a href="#">· 취향저격 레시피</a></li>
+                                <li><a href="#">· 뉴스</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">
+                                B2B<img src="img/icon-down.png" alt="상세열기">
+                            </a>
+                            <ul class="depth-02">
+                                <li><a href="#">· 밤잼성과</a></li>
+                                <li><a href="#">· 콜라보레이션</a></li>
+                                <li><a href="#">· 스토어</a></li>
+                                <li><a href="#">· 입점제안문의</a></li>
+                            </ul><!-- depth-02 -->
+                        </li>
+                    </ul><!-- gnb -->
+                </nav><!-- nav -->
+            </div><!-- inner -->
+        </header><!-- header -->
+
+        <main class="main">
+            <div class="main_visual">
+                <!-- 메인비주얼 슬라이드 -->
+                <div class="swiper MainSlide">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide slide1">
+                            <div class="slide_image">
+                                <img src="img/mainvisual-1.jpg" alt="메인비주얼">
+                            </div><!-- slide_image -->
+                            <div class="text_wrap">
+                                <span>SINCE 1882. Brand Story</span>
+                                <strong>140년 전통 프랑스산 밤잼</strong>
+                                <p>크렘드마롱 밤잼의 원재료는</br>
+                                    글루텐프리, 무합성첨가물 제조로</br>
+                                    알러지 반응을 일으키지 않으며</br>
+                                    어떠한 유전자 변형 성분도 포함되지 않은</br>
+                                    건강한 식품입니다.</p>
+                            </div><!-- text-wrap -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide slide2">
+                            <div class="slide_image">
+                                <img src="img/mainvisual-2.jpg" alt="메인비주얼">
+                            </div><!-- slide_image -->
+                            <div class="text_wrap">
+                                <span>Bulk Order</span>
+                                <strong>밤잼 대량주문</strong>
+                                <p>대량주문은 문의하기 게시판을 통해 가능합니다</p>
+                                <p>(고객센터 - 평일 10:00 ~ 18:00 / 점심시간 12:00 ~ 13:00)</p>
+                            </div><!-- text-wrap -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide slide3">
+                            <div class="slide_image">
+                                <img src="img/mainvisual-3.jpg" alt="메인비주얼">
+                            </div><!-- slide_image -->
+                            <div class="text_wrap">
+                                <p>크렘드 마롱으로</p>
+                                <p>달콤함을 선물해보세요</p>
+                            </div><!-- text-wrap -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide slide4">
+                            <div class="slide_image">
+                                <img src="img/mainvisual-4.jpg" alt="메인비주얼">
+                            </div><!-- slide_image -->
+                            <div class="text_wrap">
+                                <span>Subscription</span>
+                                <strong>밤잼 정기구독</strong>
+                                <p>원하는 구독 주기에 배송 받아보세요</p>
+                            </div><!-- text-wrap -->
+                        </div><!-- swiper-slide -->
+
+                        <div class="swiper-slide slide5">
+                            <div class="slide_image">
+                                <img src="img/mainvisual-5.jpg" alt="메인비주얼">
+                            </div><!-- slide_image -->
+                            <div class="text_wrap">
+                                <span>(G.TUBE +Tube Wringer)</span>
+                                <strong>밤잼 + 튜브링거</strong>
+                                <p>[크렘드마롱] 밤잼 자이언트 튜브 (220g) +튜브링거</p>
+                            </div><!-- text-wrap -->
+                        </div><!-- swiper-slide -->
+
+                    </div><!-- swiper-wrapper -->
+                </div><!-- MainSlide -->
+            </div><!-- main_visual -->
+
+            <section class="sec-01">
+                <div class="inner">
+                    <img src="img/backgroundpattern.png" alt="패턴" class="bg">
+                    <div class="content">
+                        <h2>From Franch</br>
+                            Since 1882</h2>
+                        <p>프랑스 남부 리옹의 야생밤으로 만들어진 크렘드마롱은</br>
+                            글루텐프리·무첨가·100% 천연 제조법으로</br>
+                            깊고 자연스러운 풍미를 전합니다.</br>
+                            1882년 시작된 클레망포지에의 대표 제품으로,</br>
+                            전 세계 89개국에서 사랑받고 있습니다. </p>
+                        <img src="img/sec-01.png" alt="#">
+                    </div><!-- content -->
+                </div><!-- inner -->
+            </section><!-- sec-01 -->
+
+            <section class="sec-02">
+                <div class="inner">
+                    <div class="title">
+                        <h2>Crème de</br>
+                            Marrons</br>
+                            Product</h2>
+                        <strong>9</strong>
+                        <img src="img/deco_title.png" alt="#">
+                    </div><!-- title -->
+
+                    <div class="list">
+                        <div class="item">
+                            <img src="img/item-tube.png" alt="아이템">
+                            <p>밤잼 튜브</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-jar.png" alt="아이템">
+                            <p>밤잼 병</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-tin.png" alt="아이템">
+                            <p>밤잼 틴</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-giant.png" alt="아이템">
+                            <p>자이언트 튜브</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-pouch.png" alt="아이템">
+                            <p>밤잼 파우치</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-apple.png" alt="아이템">
+                            <p>애플 밤잼</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-apricot.png" alt="아이템">
+                            <p>애플살구 밤잼</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-strawberry.png" alt="아이템">
+                            <p>애플딸기 밤잼</p>
+                        </div><!-- item -->
+                        <div class="item">
+                            <img src="img/item-gift.png" alt="아이템">
+                            <p>마롱 글라세</p>
+                        </div><!-- item -->
+                    </div><!-- list -->
+                </div><!-- inner -->
+            </section><!-- sec-02 -->
+        </main><!-- main -->
+
+        <div class="bottom_nav">
+
+        </div><!-- bottom_nav -->
+
+        <footer class="footer">
+
+        </footer><!-- footer -->
+
+    </div><!-- #wrap -->
 </body>
+
 </html>
