@@ -86,11 +86,19 @@ h2 {
 
 /* --- 내비게이션 시작 --- */
 .header .inner .nav {
+    width: 100%;
     height: 100vh;
     background-color: #EBF1F4;
     padding: 20px 0;
-    display: none;
+    position: fixed;
+    top: 60px;
+    left: -100%;
     /* 내비 닫아둠 */
+    transition: left 0.5s;
+}
+
+.header .inner .nav.active {
+    left: 0;
 }
 
 .header .inner .nav .search_wrap {
@@ -151,6 +159,10 @@ h2 {
     padding-left: 15px;
     display: none;
     /* 상세 카테고리 닫아둠 */
+}
+
+.header .inner .nav .gnb>li .depth-02.active {
+    display: flex;
 }
 
 .header .inner .nav .gnb>li .depth-02 li a {
@@ -242,7 +254,7 @@ h2 {
 .main_visual .MainSlide .swiper-slide.slide3 .text_wrap p {
     background-color: rgba(255, 247, 204, 0.7);
     padding: 8px 20px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -358,4 +370,295 @@ h2 {
     font-size: 14px;
     font-weight: 700;
     margin-top: 6px;
+}
+
+
+/* --- sec-03 --- */
+.sec-03 .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 0;
+}
+
+.sec-03 .inner .banner {
+    position: relative;
+    max-width: 944px;
+    width: calc(100% - 25px);
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.sec-03 .inner .banner.b01::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.sec-03 .inner .banner.b02::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 32%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.sec-03 .inner .banner.b01 {
+    background: url("../img/banner-colabo.png") center center / cover no-repeat;
+}
+
+.sec-03 .inner .banner.b02 {
+    background: url("../img/banner_delivery.png") center 80% / cover no-repeat;
+}
+
+.sec-03 .inner .banner.b01 .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1;
+}
+
+.sec-03 .inner .banner.b02 .text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 1;
+}
+
+.sec-03 .inner .banner .text img {
+    height: 30px;
+    display: block;
+}
+
+.sec-03 .inner .banner .text strong {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.sec-03 .inner .banner .text p {
+    font-weight: 500;
+}
+
+
+/* --- sec-04 --- */
+.sec-04 {
+    padding: 60px 0 90px;
+}
+
+.sec-04 .inner .title {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.sec-04 .inner .title img {
+    width: 288px;
+    margin: 0 auto;
+    display: block;
+}
+
+.sec-04 .inner .title .text {
+    color: #4D3531;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec-04 .inner .title .text p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* 레시피 슬라이드 */
+.RecipeSlide {
+    padding: 50px 0;
+}
+
+.RecipeSlide .swiper-wrapper {}
+
+.RecipeSlide .swiper-wrapper .swiper-slide {
+    width: 60%;
+    height: 366px;
+    border-radius: 10px;
+    background-color: #F3F399;
+    color: #4D3531;
+    box-shadow: 0 0 15px rgba(77, 53, 49, 0.5);
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner {
+    padding: 18px;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner>img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #4D3531;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner .text_wrap {
+    margin-top: 12px;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner .text_wrap p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 7px;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner .text_wrap .name {
+    display: flex;
+    align-items: center;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner .text_wrap .name strong {
+    font-size: 18px;
+    font-weight: 600;
+    color: #a73333;
+}
+
+.RecipeSlide .swiper-wrapper .swiper-slide .inner .text_wrap .name img {
+    width: 20px;
+    display: block;
+}
+
+.RecipeSlide .swiper-slide.swiper-slide-active {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+
+/* --- sec-05 --- */
+.sec-05 {
+    background-color: #177C8B;
+    padding: 40px 0;
+}
+
+.sec-05 .inner .title {
+    text-align: center;
+    color: #FFF7CC;
+    margin-bottom: 35px;
+}
+
+.sec-05 .inner .title p {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.sec-05 .inner .InstaSlide .swiper-wrapper .swiper-slide {
+    width: 110px;
+    height: 110px;
+}
+
+.sec-05 .inner .InstaSlide .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sec-05 .inner .insta_btn {
+    width: 100%;
+    margin: 35px auto 0;
+}
+
+.sec-05 .inner .insta_btn a {
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px solid #FFF7CC;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.sec-05 .inner .insta_btn a img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.sec-05 .inner .insta_btn a p {
+    color: #FFF7CC;
+}
+
+.character {
+    width: 230px;
+    margin: 0 auto;
+    padding: 50px 0 0;
+}
+
+.character img {
+    width: 100%;
+}
+
+
+/* --- bottom_nav --- */
+.bottom_nav {
+    position: fixed;
+    bottom: 50px;
+    right: 8px;
+    z-index: 10;
+}
+
+.bottom_nav .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.bottom_nav .inner .ask_btn {
+    width: 80px;
+}
+
+.bottom_nav .inner .ask_btn a {
+    width: 100%;
+}
+
+.bottom_nav .inner .ask_btn a img {
+    width: 100%;
+    display: block;
+}
+
+.bottom_nav .inner .top_btn {
+    width: 30px;
+    height: 30px;
+    background-color: #4D3531;
+    border-radius: 50%;
+}
+
+.bottom_nav .inner .top_btn a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom_nav .inner .top_btn a img {
+    width: 24px;
+    height: 24px;
 }

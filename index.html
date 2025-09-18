@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <script>
         window.onload = () => {
@@ -24,6 +25,73 @@
                     clickable: true,
                 },
             });//메인비주얼 슬라이드 end
+
+            //sec-04 슬라이드
+            var swiper = new Swiper(".RecipeSlide", {
+                loop: true,
+                //autoplay: true,
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    clickable: true,
+                },
+            });//sec-04 슬라이드 end
+
+            //sec-05 슬라이드
+            const logoSwiper = new Swiper(".InstaSlide.line1", {
+                slidesPerView: "auto",
+                spaceBetween: 0,
+                loop: true,
+                speed: 3000,//이동 속도
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+            });
+            const logoSwiper2 = new Swiper(".InstaSlide.line2", {
+                slidesPerView: "auto",
+                spaceBetween: 0,
+                loop: true,
+                speed: 3000,
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true, //반대 방향
+                },
+            });
+            //sec-05 슬라이드 end
+
+            //메뉴 열기
+            let menuBtn = document.querySelector('.menu_btn');
+            let closeBtn = document.querySelector('.close_btn');
+            let nav = document.querySelector('.nav');
+
+            menuBtn.addEventListener('click', () => {
+                nav.classList.add('active');
+                menuBtn.style.display = 'none'
+                closeBtn.style.display = 'block'
+            });
+
+            closeBtn.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuBtn.style.display = 'block'
+                closeBtn.style.display = 'none'
+            });
+
+            //내비 상세 카테고리 열기 (수정#####)
+            let depth01 = document.querySelectorAll('.depth-01');
+            let depth02 = document.querySelectorAll('.depth-02');
+
+            depth01.addEventListener('click', () => {
+                depth02.classList.add('active')
+            })
 
         };//scipt end
     </script>
@@ -252,10 +320,235 @@
                     </div><!-- list -->
                 </div><!-- inner -->
             </section><!-- sec-02 -->
+
+            <section class="sec-03">
+                <div class="inner">
+                    <div class="banner b01">
+                        <div class="text">
+                            <img src="img/colabo_logo.png" alt="콜라보로고">
+                            <p>밤에 진심인 두 브랜드의 콜라보레이션</p>
+                        </div><!-- text -->
+                    </div><!-- banner -->
+                    <div class="banner b02">
+                        <div class="text">
+                            <strong>정기배송 서비스</strong>
+                            <p>매일 먹는 밤잼을 자동으로 배송받아 보세요!</p>
+                        </div><!-- text -->
+                    </div><!-- banner -->
+                </div><!-- inner -->
+            </section><!-- sec-03 -->
+
+            <section class="sec-04">
+                <div class="inner">
+                    <div class="title">
+                        <img src="img/title-background1.png" alt="#">
+                        <div class="text">
+                            <p>From jar to joy</p>
+                            <h2>View Recipe</h2>
+                        </div><!-- text -->
+                    </div><!-- title -->
+
+                    <!-- 레시피 슬라이드 -->
+                    <!-- Swiper -->
+                    <div class="swiper RecipeSlide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="inner">
+                                    <img src="img/recipe_donut.jpg" alt="recipe">
+                                    <div class="text_wrap">
+                                        <p>아이들 영양간식으로</br>
+                                            우유와 잘 어울리는</p>
+                                        <div class="name">
+                                            <strong>밤잼 도넛</strong>
+                                            <img src="img/icon-right3.png" alt="">
+                                        </div><!-- name -->
+                                    </div><!-- text_wrap -->
+                                </div><!-- inner -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="inner">
+                                    <img src="img/recipe_icecream.jpg" alt="recipe">
+                                    <div class="text_wrap">
+                                        <p>견과류를 곁들인</br>
+                                            고소하고 부드러운</p>
+                                        <div class="name">
+                                            <strong>마롱 아이스크림</strong>
+                                            <img src="img/icon-right3.png" alt="">
+                                        </div><!-- name -->
+                                    </div><!-- text_wrap -->
+                                </div><!-- inner -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="inner">
+                                    <img src="img/recipe_cheese.png" alt="recipe">
+                                    <div class="text_wrap">
+                                        <p>치즈와도, 와인과도</br>
+                                            잘 어울리는</p>
+                                        <div class="name">
+                                            <strong>크렘드마롱</strong>
+                                            <img src="img/icon-right3.png" alt="">
+                                        </div><!-- name -->
+                                    </div><!-- text_wrap -->
+                                </div><!-- inner -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="inner">
+                                    <img src="img/recipe_bread.jpg" alt="recipe">
+                                    <div class="text_wrap">
+                                        <p>밤잼으로 만든</br>
+                                            영원한 소울메이트</p>
+                                        <div class="name">
+                                            <strong>밤잼+빵</strong>
+                                            <img src="img/icon-right3.png" alt="">
+                                        </div><!-- name -->
+                                    </div><!-- text_wrap -->
+                                </div><!-- inner -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="inner">
+                                    <img src="img/recipe_latte.jpg" alt="recipe">
+                                    <div class="text_wrap">
+                                        <p>간편하게 즐기는</br>
+                                            고소하고 달달한</p>
+                                        <div class="name">
+                                            <strong>밤 라떼</strong>
+                                            <img src="img/icon-right3.png" alt="">
+                                        </div><!-- name -->
+                                    </div><!-- text_wrap -->
+                                </div><!-- inner -->
+                            </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+                    </div><!-- RecipeSlide -->
+                </div><!-- inner -->
+            </section><!-- sec-04 -->
+
+            <section class="sec-05">
+                <div class="inner">
+                    <div class="title">
+                        <p>follow us on</p>
+                        <h2>Instagram</h2>
+                    </div><!-- title -->
+
+                    <!-- 인스타 슬라이드 -->
+                    <div class="swiper InstaSlide line1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/insta1.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta2.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta3.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta4.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta5.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta6.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta7.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta8.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta9.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta10.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta11.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta12.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta13.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+                    </div><!-- InstaSlide -->
+
+                    <div class="swiper InstaSlide line2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/insta1.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta2.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta3.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta4.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta5.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta6.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta7.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta8.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta9.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta10.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta11.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta12.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                            <div class="swiper-slide">
+                                <img src="img/insta13.jpg" alt="#">
+                            </div><!-- swiper-slide -->
+                        </div><!-- swiper-wrapper -->
+                    </div><!-- InstaSlide -->
+
+                    <button class="insta_btn">
+                        <a href="#">
+                            <img src="img/icon-insta.png" alt="#">
+                            <p>구경하기</p>
+                        </a>
+                    </button><!-- insta_btn -->
+                </div><!-- inner -->
+            </section><!-- sec-05 -->
+
+            <div class="character">
+                <img src="img/character.jpg" alt="character">
+            </div><!-- character -->
         </main><!-- main -->
 
         <div class="bottom_nav">
-
+            <div class="inner">
+                <div class="ask_btn">
+                    <a href="#">
+                        <img src="img/bottom_nav.png" alt="문의아이콘">
+                    </a>
+                </div><!-- ask_btn -->
+                <div class="top_btn">
+                    <a href="#">
+                        <img src="img/icon-up2.png" alt="탑아이콘">
+                    </a>
+                </div><!-- top_btn -->
+            </div><!-- inner -->
         </div><!-- bottom_nav -->
 
         <footer class="footer">
