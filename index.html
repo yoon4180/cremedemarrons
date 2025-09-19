@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>크렘드마롱 리디자인</title>
+    <title>크렘드마롱 메인</title>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
     <script>
         window.onload = () => {
             //메인비주얼 슬라이드
@@ -91,9 +91,9 @@
             for (let i = 0; i < depth01.length; i++) {
                 depth01[i].addEventListener('click', () => {
                     //if (!gnbLi[i].classList.contains('open')) {
-                        //gnbLi[i].classList.add('open');
+                    //gnbLi[i].classList.add('open');
                     //} else {
-                        //gnbLi[i].classList.remove('open')
+                    //gnbLi[i].classList.remove('open')
                     //} <-- 스크롤 길이 길어지면 아래쪽 선택이 안됨
 
 
@@ -107,7 +107,7 @@
                 })
             };//
 
-            // top 버튼 요소 선택
+            // top 버튼 선택
             const topBtn = document.querySelector('.top_btn');
 
             topBtn.addEventListener('click', () => {
@@ -123,7 +123,6 @@
 </head>
 
 <body>
-    <!-- 헤더, 메인, 하단고정, 푸터 -->
     <div id="wrap">
 
         <header class="header">
@@ -136,7 +135,7 @@
                         <img src="img/icon-close.png" alt="메뉴닫기">
                     </button><!-- close_btn -->
                     <h1 class="logo">
-                        <a href="#"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
+                        <a href="../index.html"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
                     </h1><!-- logo -->
                     <div class="util">
                         <button class="cart_btn">
@@ -162,14 +161,14 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="#">· All</a></li>
-                                <li><a href="#">· Best</a></li>
-                                <li><a href="#">· 단품</a></li>
-                                <li><a href="#">· 선물세트</a></li>
-                                <li><a href="#">· 마롱글라세</a></li>
-                                <li><a href="#">· 벌크(업소용)</a></li>
-                                <li><a href="#">· 정기구독</a></li>
-                                <li><a href="#">· 대량주문</a></li>
+                                <li><a href="../html/sub.html">All</a></li>
+                                <li><a href="#">Best</a></li>
+                                <li><a href="#">단품</a></li>
+                                <li><a href="#">선물세트</a></li>
+                                <li><a href="#">마롱글라세</a></li>
+                                <li><a href="#">벌크(업소용)</a></li>
+                                <li><a href="#">정기구독</a></li>
+                                <li><a href="#">대량주문</a></li>
                             </ul><!-- depth-02 -->
                         </li>
                         <li>
@@ -184,8 +183,8 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="#">· 소개</a></li>
-                                <li><a href="#">· 매장안내</a></li>
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">매장안내</a></li>
                             </ul><!-- depth-02 -->
                         </li>
                         <li>
@@ -195,8 +194,8 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="#">· 취향저격 레시피</a></li>
-                                <li><a href="#">· 뉴스</a></li>
+                                <li><a href="#">취향저격 레시피</a></li>
+                                <li><a href="#">뉴스</a></li>
                             </ul><!-- depth-02 -->
                         </li>
                         <li>
@@ -206,10 +205,10 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="#">· 밤잼성과</a></li>
-                                <li><a href="#">· 콜라보레이션</a></li>
-                                <li><a href="#">· 스토어</a></li>
-                                <li><a href="#">· 입점제안문의</a></li>
+                                <li><a href="#">밤잼성과</a></li>
+                                <li><a href="#">콜라보레이션</a></li>
+                                <li><a href="#">스토어</a></li>
+                                <li><a href="#">입점제안문의</a></li>
                             </ul><!-- depth-02 -->
                         </li>
                     </ul><!-- gnb -->
@@ -225,7 +224,7 @@
 
                         <div class="swiper-slide slide1">
                             <div class="slide_image">
-                                <img src="img/mainvisual-1.jpg" alt="메인비주얼">
+                                <img src="img/mainvisual-1.jpg" alt="140년 전통 프랑스산 밤잼">
                             </div><!-- slide_image -->
                             <div class="text_wrap">
                                 <span>SINCE 1882. Brand Story</span>
@@ -240,7 +239,7 @@
 
                         <div class="swiper-slide slide2">
                             <div class="slide_image">
-                                <img src="img/mainvisual-2.jpg" alt="메인비주얼">
+                                <img src="img/mainvisual-2.jpg" alt="밤잼 대량주문">
                             </div><!-- slide_image -->
                             <div class="text_wrap">
                                 <span>Bulk Order</span>
@@ -252,7 +251,7 @@
 
                         <div class="swiper-slide slide3">
                             <div class="slide_image">
-                                <img src="img/mainvisual-3.jpg" alt="메인비주얼">
+                                <img src="img/mainvisual-3.jpg" alt="달콤함을 선물해보세요">
                             </div><!-- slide_image -->
                             <div class="text_wrap">
                                 <p>크렘드 마롱으로</p>
@@ -262,7 +261,7 @@
 
                         <div class="swiper-slide slide4">
                             <div class="slide_image">
-                                <img src="img/mainvisual-4.jpg" alt="메인비주얼">
+                                <img src="img/mainvisual-4.jpg" alt="밤잼 정기구독">
                             </div><!-- slide_image -->
                             <div class="text_wrap">
                                 <span>Subscription</span>
@@ -273,7 +272,7 @@
 
                         <div class="swiper-slide slide5">
                             <div class="slide_image">
-                                <img src="img/mainvisual-5.jpg" alt="메인비주얼">
+                                <img src="img/mainvisual-5.jpg" alt="밤잼 + 튜브링거">
                             </div><!-- slide_image -->
                             <div class="text_wrap">
                                 <span>(G.TUBE +Tube Wringer)</span>
@@ -297,7 +296,7 @@
                             깊고 자연스러운 풍미를 전합니다.</br>
                             1882년 시작된 클레망포지에의 대표 제품으로,</br>
                             전 세계 89개국에서 사랑받고 있습니다. </p>
-                        <img src="img/sec-01.png" alt="#">
+                        <img src="img/sec-01.png" alt="illustration">
                     </div><!-- content -->
                 </div><!-- inner -->
             </section><!-- sec-01 -->
@@ -309,44 +308,44 @@
                             Marrons</br>
                             Product</h2>
                         <strong>9</strong>
-                        <img src="img/deco_title.png" alt="#">
+                        <img src="img/deco_title.png" alt="deco_title">
                     </div><!-- title -->
 
                     <div class="list">
                         <div class="item">
-                            <img src="img/item-tube.png" alt="아이템">
+                            <img src="img/item-tube.png" alt="밤잼 튜브">
                             <p>밤잼 튜브</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-jar.png" alt="아이템">
+                            <img src="img/item-jar.png" alt="밤잼 병">
                             <p>밤잼 병</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-tin.png" alt="아이템">
+                            <img src="img/item-tin.png" alt="밤잼 틴">
                             <p>밤잼 틴</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-giant.png" alt="아이템">
+                            <img src="img/item-giant.png" alt="자이언트 튜브">
                             <p>자이언트 튜브</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-pouch.png" alt="아이템">
+                            <img src="img/item-pouch.png" alt="밤잼 파우치">
                             <p>밤잼 파우치</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-apple.png" alt="아이템">
+                            <img src="img/item-apple.png" alt="애플 밤잼">
                             <p>애플 밤잼</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-apricot.png" alt="아이템">
+                            <img src="img/item-apricot.png" alt="애플살구 밤잼">
                             <p>애플살구 밤잼</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-strawberry.png" alt="아이템">
+                            <img src="img/item-strawberry.png" alt="애플딸기 밤잼">
                             <p>애플딸기 밤잼</p>
                         </div><!-- item -->
                         <div class="item">
-                            <img src="img/item-gift.png" alt="아이템">
+                            <img src="img/item-gift.png" alt="마롱 글라세">
                             <p>마롱 글라세</p>
                         </div><!-- item -->
                     </div><!-- list -->
@@ -373,7 +372,7 @@
             <section class="sec-04">
                 <div class="inner">
                     <div class="title">
-                        <img src="img/title-background1.png" alt="#">
+                        <img src="img/title-background1.png" alt="title-background">
                         <div class="text">
                             <p>From jar to joy</p>
                             <h2>View Recipe</h2>
@@ -386,13 +385,13 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="inner">
-                                    <img src="img/recipe_donut.jpg" alt="recipe">
+                                    <img src="img/recipe_donut.jpg" alt="밤잼 도넛">
                                     <div class="text_wrap">
                                         <p>아이들 영양간식으로</br>
                                             우유와 잘 어울리는</p>
                                         <div class="name">
                                             <strong>밤잼 도넛</strong>
-                                            <img src="img/icon-right3.png" alt="">
+                                            <img src="img/icon-right3.png" alt="연결아이콘">
                                         </div><!-- name -->
                                     </div><!-- text_wrap -->
                                 </div><!-- inner -->
@@ -400,13 +399,13 @@
 
                             <div class="swiper-slide">
                                 <div class="inner">
-                                    <img src="img/recipe_icecream.jpg" alt="recipe">
+                                    <img src="img/recipe_icecream.jpg" alt="마롱 아이스크림">
                                     <div class="text_wrap">
                                         <p>견과류를 곁들인</br>
                                             고소하고 부드러운</p>
                                         <div class="name">
                                             <strong>마롱 아이스크림</strong>
-                                            <img src="img/icon-right3.png" alt="">
+                                            <img src="img/icon-right3.png" alt="연결아이콘">
                                         </div><!-- name -->
                                     </div><!-- text_wrap -->
                                 </div><!-- inner -->
@@ -414,13 +413,13 @@
 
                             <div class="swiper-slide">
                                 <div class="inner">
-                                    <img src="img/recipe_cheese.png" alt="recipe">
+                                    <img src="img/recipe_cheese.png" alt="크렘드마롱">
                                     <div class="text_wrap">
                                         <p>치즈와도, 와인과도</br>
                                             잘 어울리는</p>
                                         <div class="name">
                                             <strong>크렘드마롱</strong>
-                                            <img src="img/icon-right3.png" alt="">
+                                            <img src="img/icon-right3.png" alt="연결아이콘">
                                         </div><!-- name -->
                                     </div><!-- text_wrap -->
                                 </div><!-- inner -->
@@ -428,13 +427,13 @@
 
                             <div class="swiper-slide">
                                 <div class="inner">
-                                    <img src="img/recipe_bread.jpg" alt="recipe">
+                                    <img src="img/recipe_bread.jpg" alt="밤잼+빵">
                                     <div class="text_wrap">
                                         <p>밤잼으로 만든</br>
                                             영원한 소울메이트</p>
                                         <div class="name">
                                             <strong>밤잼+빵</strong>
-                                            <img src="img/icon-right3.png" alt="">
+                                            <img src="img/icon-right3.png" alt="연결아이콘">
                                         </div><!-- name -->
                                     </div><!-- text_wrap -->
                                 </div><!-- inner -->
@@ -442,13 +441,13 @@
 
                             <div class="swiper-slide">
                                 <div class="inner">
-                                    <img src="img/recipe_latte.jpg" alt="recipe">
+                                    <img src="img/recipe_latte.jpg" alt="밤 라떼">
                                     <div class="text_wrap">
                                         <p>간편하게 즐기는</br>
                                             고소하고 달달한</p>
                                         <div class="name">
                                             <strong>밤 라떼</strong>
-                                            <img src="img/icon-right3.png" alt="">
+                                            <img src="img/icon-right3.png" alt="연결아이콘">
                                         </div><!-- name -->
                                     </div><!-- text_wrap -->
                                 </div><!-- inner -->
@@ -469,43 +468,43 @@
                     <div class="swiper InstaSlide line1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="img/insta1.jpg" alt="#">
+                                <img src="img/insta1.jpg" alt="insta1">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta2.jpg" alt="#">
+                                <img src="img/insta2.jpg" alt="insta2">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta3.jpg" alt="#">
+                                <img src="img/insta3.jpg" alt="insta3">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta4.jpg" alt="#">
+                                <img src="img/insta4.jpg" alt="insta4">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta5.jpg" alt="#">
+                                <img src="img/insta5.jpg" alt="insta5">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta6.jpg" alt="#">
+                                <img src="img/insta6.jpg" alt="insta6">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta7.jpg" alt="#">
+                                <img src="img/insta7.jpg" alt="insta7">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta8.jpg" alt="#">
+                                <img src="img/insta8.jpg" alt="insta8">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta9.jpg" alt="#">
+                                <img src="img/insta9.jpg" alt="insta9">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta10.jpg" alt="#">
+                                <img src="img/insta10.jpg" alt="insta10">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta11.jpg" alt="#">
+                                <img src="img/insta11.jpg" alt="insta11">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta12.jpg" alt="#">
+                                <img src="img/insta12.jpg" alt="insta12">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta13.jpg" alt="#">
+                                <img src="img/insta13.jpg" alt="insta13">
                             </div><!-- swiper-slide -->
                         </div><!-- swiper-wrapper -->
                     </div><!-- InstaSlide -->
@@ -513,50 +512,50 @@
                     <div class="swiper InstaSlide line2">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="img/insta1.jpg" alt="#">
+                                <img src="img/insta1.jpg" alt="insta1">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta2.jpg" alt="#">
+                                <img src="img/insta2.jpg" alt="insta2">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta3.jpg" alt="#">
+                                <img src="img/insta3.jpg" alt="insta3">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta4.jpg" alt="#">
+                                <img src="img/insta4.jpg" alt="insta4">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta5.jpg" alt="#">
+                                <img src="img/insta5.jpg" alt="insta5">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta6.jpg" alt="#">
+                                <img src="img/insta6.jpg" alt="insta6">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta7.jpg" alt="#">
+                                <img src="img/insta7.jpg" alt="insta7">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta8.jpg" alt="#">
+                                <img src="img/insta8.jpg" alt="insta8">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta9.jpg" alt="#">
+                                <img src="img/insta9.jpg" alt="insta9">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta10.jpg" alt="#">
+                                <img src="img/insta10.jpg" alt="insta10">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta11.jpg" alt="#">
+                                <img src="img/insta11.jpg" alt="insta11">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta12.jpg" alt="#">
+                                <img src="img/insta12.jpg" alt="insta12">
                             </div><!-- swiper-slide -->
                             <div class="swiper-slide">
-                                <img src="img/insta13.jpg" alt="#">
+                                <img src="img/insta13.jpg" alt="insta13">
                             </div><!-- swiper-slide -->
                         </div><!-- swiper-wrapper -->
                     </div><!-- InstaSlide -->
 
                     <button class="insta_btn">
                         <a href="https://www.instagram.com/cdmofficial_kr/">
-                            <img src="img/icon-insta.png" alt="인스타">
+                            <img src="img/icon-insta.png" alt="인스타 로고">
                             <p>구경하기</p>
                         </a>
                     </button><!-- insta_btn -->
@@ -564,7 +563,7 @@
             </section><!-- sec-05 -->
 
             <div class="character">
-                <img src="img/character.jpg" alt="character">
+                <img src="img/character.jpg" alt="캐릭터">
             </div><!-- character -->
         </main><!-- main -->
 
