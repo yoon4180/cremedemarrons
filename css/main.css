@@ -149,22 +149,37 @@ h2 {
 .header .inner .nav .gnb>li a img {
     width: 20px;
     height: 20px;
+    display: block;
+}
+
+.header .inner .nav .gnb>li a .up {
+    display: none;
+    /* up 숨김 */
+}
+
+.header .inner .nav .gnb>li.open a .up {
+    display: inline-block;
+    /* open - up 보임*/
+}
+
+.header .inner .nav .gnb>li.open a .down {
+    display: none;
+    /* open - down 숨김 */
 }
 
 .header .inner .nav .gnb>li .depth-02 {
+    display: none;
+    /* depth-02 숨김 */
+}
+
+.header .inner .nav .gnb>li.open .depth-02 {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 5px;
     padding-left: 15px;
-    display: none;
-    /* 상세 카테고리 닫아둠 */
+    /* open - depth-02 열림 */
 }
-
-.header .inner .nav .gnb>li .depth-02.active {
-    display: flex;
-}
-
 .header .inner .nav .gnb>li .depth-02 li a {
     font-size: 15px;
 }
@@ -493,6 +508,7 @@ h2 {
 .RecipeSlide .swiper-wrapper {}
 
 .RecipeSlide .swiper-wrapper .swiper-slide {
+    max-width: 400px;
     width: 60%;
     height: 366px;
     border-radius: 10px;
@@ -605,7 +621,8 @@ h2 {
 }
 
 .character {
-    width: 230px;
+    max-width: 500px;
+    width: 60%;
     margin: 0 auto;
     padding: 50px 0 0;
 }
@@ -648,17 +665,66 @@ h2 {
     height: 30px;
     background-color: #4D3531;
     border-radius: 50%;
-}
-
-.bottom_nav .inner .top_btn a {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.bottom_nav .inner .top_btn a img {
+.bottom_nav .inner .top_btn img {
     width: 24px;
     height: 24px;
+}
+
+
+/* ---- 푸터 ---- */
+.footer {
+    background-color: #614A44;
+    color: #EBF1F4;
+    padding: 30px 0;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 130%;
+}
+
+.footer .inner {
+    max-width: 944px;
+    width: calc(100% - 25px);
+    margin: 0 auto;
+}
+
+
+.footer .inner .footer_nav>ul {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    gap: 25px;
+}
+
+.footer .inner .text_wrap {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer .inner .text_wrap p {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.footer .inner .text_wrap ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footer .inner .text_wrap ul li {
+    letter-spacing: -0.24px;
+}
+
+.footer .inner>span {
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #EBF1F4;
+    display: block;
 }

@@ -24,7 +24,7 @@
                 pagination: {
                     clickable: true,
                 },
-            });//메인비주얼 슬라이드 end
+            });//
 
             //sec-04 슬라이드
             var swiper = new Swiper(".RecipeSlide", {
@@ -40,7 +40,7 @@
                 pagination: {
                     clickable: true,
                 },
-            });//sec-04 슬라이드 end
+            });//
 
             //sec-05 슬라이드
             const logoSwiper = new Swiper(".InstaSlide.line1", {
@@ -65,8 +65,7 @@
                     disableOnInteraction: false,
                     reverseDirection: true, //반대 방향
                 },
-            });
-            //sec-05 슬라이드 end
+            });//
 
             //메뉴 열기
             let menuBtn = document.querySelector('.menu_btn');
@@ -83,15 +82,40 @@
                 nav.classList.remove('active');
                 menuBtn.style.display = 'block'
                 closeBtn.style.display = 'none'
-            });
+            });//
 
-            //내비 상세 카테고리 열기 (수정#####)
+            //내비 상세 카테고리 열기 (수정##### -> for 사용)
             let depth01 = document.querySelectorAll('.depth-01');
-            let depth02 = document.querySelectorAll('.depth-02');
+            let gnbLi = document.querySelectorAll('.gnb > li');
 
-            depth01.addEventListener('click', () => {
-                depth02.classList.add('active')
-            })
+            for (let i = 0; i < depth01.length; i++) {
+                depth01[i].addEventListener('click', () => {
+                    //if (!gnbLi[i].classList.contains('open')) {
+                        //gnbLi[i].classList.add('open');
+                    //} else {
+                        //gnbLi[i].classList.remove('open')
+                    //} <-- 스크롤 길이 길어지면 아래쪽 선택이 안됨
+
+
+                    //클릭한 li 외의 다른 li닫기
+                    gnbLi.forEach((li, index) => {
+                        if (index !== i) {
+                            li.classList.remove('open');
+                        }
+                    });
+                    gnbLi[i].classList.toggle('open');
+                })
+            };//
+
+            // top 버튼 요소 선택
+            const topBtn = document.querySelector('.top_btn');
+
+            topBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 부드럽게 스크롤
+                });
+            });//
 
         };//scipt end
     </script>
@@ -133,7 +157,9 @@
                     <ul class="gnb">
                         <li>
                             <a href="#" class="depth-01">
-                                SHOP<img src="img/icon-down.png" alt="상세열기">
+                                SHOP
+                                <img src="img/icon-down.png" alt="상세열기" class="down">
+                                <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
                                 <li><a href="#">· All</a></li>
@@ -153,7 +179,9 @@
                         </li>
                         <li>
                             <a href="#" class="depth-01">
-                                BRAND<img src="img/icon-down.png" alt="상세열기">
+                                BRAND
+                                <img src="img/icon-down.png" alt="상세열기" class="down">
+                                <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
                                 <li><a href="#">· 소개</a></li>
@@ -162,7 +190,9 @@
                         </li>
                         <li>
                             <a href="#" class="depth-01">
-                                COMMUNITY<img src="img/icon-down.png" alt="상세열기">
+                                COMMUNITY
+                                <img src="img/icon-down.png" alt="상세열기" class="down">
+                                <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
                                 <li><a href="#">· 취향저격 레시피</a></li>
@@ -171,7 +201,9 @@
                         </li>
                         <li>
                             <a href="#" class="depth-01">
-                                B2B<img src="img/icon-down.png" alt="상세열기">
+                                B2B
+                                <img src="img/icon-down.png" alt="상세열기" class="down">
+                                <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
                                 <li><a href="#">· 밤잼성과</a></li>
@@ -523,8 +555,8 @@
                     </div><!-- InstaSlide -->
 
                     <button class="insta_btn">
-                        <a href="#">
-                            <img src="img/icon-insta.png" alt="#">
+                        <a href="https://www.instagram.com/cdmofficial_kr/">
+                            <img src="img/icon-insta.png" alt="인스타">
                             <p>구경하기</p>
                         </a>
                     </button><!-- insta_btn -->
@@ -539,20 +571,58 @@
         <div class="bottom_nav">
             <div class="inner">
                 <div class="ask_btn">
-                    <a href="#">
+                    <a href="https://clementfaugier.imweb.me/52">
                         <img src="img/bottom_nav.png" alt="문의아이콘">
                     </a>
                 </div><!-- ask_btn -->
                 <div class="top_btn">
-                    <a href="#">
-                        <img src="img/icon-up2.png" alt="탑아이콘">
-                    </a>
+                    <img src="img/icon-up2.png" alt="탑아이콘">
                 </div><!-- top_btn -->
             </div><!-- inner -->
         </div><!-- bottom_nav -->
 
         <footer class="footer">
+            <div class="inner">
+                <ul class="footer_nav">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </ul><!-- footer_nav -->
 
+                <div class="text_wrap">
+                    <div class="cs">
+                        <p>고객센터 070-7744-8448</p>
+                        <ul>
+                            <li>· 평일 10:00 - 18:00 (점심시간 12:00 - 13:00)</li>
+                            <li>· 주말 및 공휴일 휴무</li>
+                        </ul>
+                    </div><!-- cs -->
+                    <div class="location">
+                        <p>매장안내</p>
+                        <ul>
+                            <li>크렘드 마롱 T2입국점</li>
+                            <li>크렘드마롱 영종점</li>
+                            <li>크렘드마롱 용인세브란스점</li>
+                            <li>크렘드마롱 충청점</li>
+                            <li>크렘드마롱 덕평자연휴게소점</li>
+                        </ul>
+                    </div><!-- location -->
+                    <div class="address">
+                        <ul>
+                            <li>COMPANY: (주)우드앤우즈 | CEO: 이동혁</li>
+                            <li>개인정보관리책임자: 이동혁</li>
+                            <li>E-MAIL : clementfaugier.kr@gmail.com</li>
+                            <li>ADDRESS: 인천광역시 중구 운서로63번길 27</li>
+                            <li>BUSINESS NO: 129-86-72298</li>
+                            <li>통신판매: 제 2020-인천중구-0921 호</li>
+                        </ul>
+                    </div><!-- address -->
+                </div><!-- text_wrap -->
+
+                <span>Copyright ⓒ 2024 크렘드마롱(클레망포지에) All rights reserved.</span>
+            </div><!-- inner -->
         </footer><!-- footer -->
 
     </div><!-- #wrap -->
