@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/sub.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Swiper JS -->
-     <script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
         window.onload = () => {
             //메뉴 열기
             let menuBtn = document.querySelector('.menu_btn');
@@ -44,7 +46,7 @@
                 })
             };//
 
-            //top 버튼 선택
+            // top 버튼 선택
             const topBtn = document.querySelector('.top_btn');
 
             topBtn.addEventListener('click', () => {
@@ -53,9 +55,41 @@
                     behavior: 'smooth'
                 });
             });//
+
+            // 📌cat-gnb 메뉴바
+            let menuWidth = $('.cat-depth-01').outerWidth();
+            $('.cat-gnb .menu_bar').width(menuWidth);
+
+            // depth-01 클릭 시 
+            $('.cat-depth-01').on('click', function () {
+                // depth-01의 메뉴바 이동
+                let moveLeft = $(this).position().left;
+                let moveWidth = $(this).outerWidth();
+                $('.cat-gnb .menu_bar').stop().animate({
+                    'left': moveLeft,
+                    'width': moveWidth
+                }, 200);
+
+                // 모두 닫기
+                $('.cat-depth-02').removeClass('active');
+                $('.cat-depth-01').removeClass('active');
+
+                // 클릭한 depth-01의 02만 열기
+                $(this).addClass('active');
+                $(this).siblings('.cat-depth-02').addClass('active');
+            });
+
+
+            // depth-02 클릭 시
+            $('.cat-depth-02 li a').on('click', function () {
+                $('.cat-depth-02 li a').removeClass('active');
+                $(this).addClass('active');
+            })
+
         };//script end
-     </script>
+    </script>
 </head>
+
 <body>
     <div id="wrap">
 
@@ -95,8 +129,8 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="../html/sub.html">All</a></li>
-                                <li><a href="#">Best</a></li>
+                                <li><a href="#">All</a></li>
+                                <li><a href="../html/sub.html">Best</a></li>
                                 <li><a href="#">단품</a></li>
                                 <li><a href="#">선물세트</a></li>
                                 <li><a href="#">마롱글라세</a></li>
@@ -151,14 +185,197 @@
         </header><!-- header -->
 
         <div class="category">
-            <ul>
-                <li><a href="#">SHOP</a></li>
-                <li><a href="#">EVENT</a></li>
-                <li><a href="#">BRAND</a></li>
-                <li><a href="#">COMMUNITY</a></li>
-                <li><a href="#">B2B</a></li>
-            </ul>
+            <ul class="cat-gnb">
+                <li>
+                    <a href="#" class="cat-depth-01">
+                        SHOP
+                    </a>
+                    <ul class="cat-depth-02">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Best</a></li>
+                        <li><a href="#">단품</a></li>
+                        <li><a href="#">선물세트</a></li>
+                        <li><a href="#">마롱글라세</a></li>
+                        <li><a href="#">벌크(업소용)</a></li>
+                        <li><a href="#">정기구독</a></li>
+                        <li><a href="#">대량주문</a></li>
+                    </ul><!-- depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="cat-depth-01">
+                        EVENT
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="cat-depth-01">
+                        BRAND
+                    </a>
+                    <ul class="cat-depth-02">
+                        <li><a href="#">소개</a></li>
+                        <li><a href="#">매장안내</a></li>
+                    </ul><!-- depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="cat-depth-01">
+                        COMMUNITY
+                    </a>
+                    <ul class="cat-depth-02">
+                        <li><a href="#">취향저격 레시피</a></li>
+                        <li><a href="#">뉴스</a></li>
+                    </ul><!-- depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="cat-depth-01">
+                        B2B
+                    </a>
+                    <ul class="cat-depth-02">
+                        <li><a href="#">밤잼성과</a></li>
+                        <li><a href="#">콜라보레이션</a></li>
+                        <li><a href="#">스토어</a></li>
+                        <li><a href="#">입점제안문의</a></li>
+                    </ul><!-- depth-02 -->
+                </li>
+
+                <div class="menu_bar">
+                    <span>메뉴바</span>
+                </div><!-- menu_bar -->
+            </ul><!-- gnb -->
         </div><!-- category -->
+
+        <section class="section" id="Best_Product">
+            <div class="title">
+                <img src="img/subtitle-background1.png" alt="타이틀 배경">
+                <div class="title_text">
+                    <h3>Best Product</h3>
+                    <p>가장 사랑받는 상품만 모았어요</p>
+                </div><!-- title_text -->
+            </div><!-- title -->
+
+            <div class="list_wrap">
+                <div class="order">
+                    <span>총 9개 제품</span>
+                    <select name="order">
+                        <option value="1" selected>추천순</option>
+                        <option value="2" selected>최신순</option>
+                        <option value="2" selected>판매순</option>
+                    </select>
+                </div><!-- order -->
+
+                <div class="list">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_giant.png" alt="giant">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 밤잼 자이언트 튜브 (220g)</p>
+                            <div class="info">
+                                <strong>14,500원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_jar.png" alt="jar">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 밤잼 병 (JAR 250g)</p>
+                            <div class="info">
+                                <strong>14,500원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_tube.png" alt="tube">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 밤잼 튜브 (78g x 3ea)</p>
+                            <div class="info">
+                                <strong>17,500원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_tin.png" alt="tin">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 밤잼 틴 (100g x 4ea)</p>
+                            <div class="info">
+                                <strong>16,500원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_pouch.png" alt="pouch">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 밤잼 파우치 (85g x 4ea)</p>
+                            <div class="info">
+                                <strong>18,500원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_apple.png" alt="apple">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 애플 밤잼 (85g x 4ea)</p>
+                            <div class="info">
+                                <strong>19,000원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_apricot.png" alt="apricot">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 애플살구 밤잼 (85g x 4ea)</p>
+                            <div class="info">
+                                <strong>19,000원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/item_strawberry.png" alt="strawberry">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 애플딸기 밤잼 (85g x 4ea)</p>
+                            <div class="info">
+                                <strong>19,000원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/keyring.png" alt="keyring">
+                        </div><!-- image -->
+                        <div class="text">
+                            <p>[크렘드마롱] 마로노 키링</p>
+                            <div class="info">
+                                <strong>23,000원</strong>
+                                <img src="img/icon-heart.png" alt="좋아요" class="heart">
+                            </div><!-- info -->
+                        </div><!-- text -->
+                        <span>Sold Out</span>
+                    </div><!-- item -->
+                </div><!-- list -->
+
+                
+            </div><!-- list_wrap -->
+        </section>
 
         <div class="bottom_nav">
             <div class="inner">
@@ -219,4 +436,5 @@
 
     </div><!-- #wrap -->
 </body>
+
 </html>

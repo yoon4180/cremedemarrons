@@ -7,10 +7,17 @@
     <title>크렘드마롱 메인</title>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS css -->
+    <link href="lib/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS js -->
+    <script src="lib/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script>
         window.onload = () => {
             //메인비주얼 슬라이드
@@ -161,8 +168,8 @@
                                 <img src="img/icon-up.png" alt="상세닫기" class="up">
                             </a>
                             <ul class="depth-02">
-                                <li><a href="../html/sub.html">All</a></li>
-                                <li><a href="#">Best</a></li>
+                                <li><a href="#">All</a></li>
+                                <li><a href="../html/sub.html">Best</a></li>
                                 <li><a href="#">단품</a></li>
                                 <li><a href="#">선물세트</a></li>
                                 <li><a href="#">마롱글라세</a></li>
@@ -296,7 +303,7 @@
                             깊고 자연스러운 풍미를 전합니다.</br>
                             1882년 시작된 클레망포지에의 대표 제품으로,</br>
                             전 세계 89개국에서 사랑받고 있습니다. </p>
-                        <img src="img/sec-01.png" alt="illustration">
+                        <img src="img/sec-01.png" alt="illustration" data-aos="fade-up"><!-- aos 효과 안됨 -->
                     </div><!-- content -->
                 </div><!-- inner -->
             </section><!-- sec-01 -->
