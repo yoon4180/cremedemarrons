@@ -16,10 +16,9 @@
     <!-- AOS js -->
     <script src="lib/aos.js"></script>
     <script>
-        AOS.init();
-    </script>
-    <script>
         window.onload = () => {
+            AOS.init();
+
             //메인비주얼 슬라이드
             var swiper = new Swiper(".MainSlide", {
                 spaceBetween: 0,
@@ -142,7 +141,7 @@
                         <img src="img/icon-close.png" alt="메뉴닫기">
                     </button><!-- close_btn -->
                     <h1 class="logo">
-                        <a href="../index.html"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
+                        <a href="index.html"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
                     </h1><!-- logo -->
                     <div class="util">
                         <button class="cart_btn">
@@ -169,7 +168,7 @@
                             </a>
                             <ul class="depth-02">
                                 <li><a href="#">All</a></li>
-                                <li><a href="../html/sub.html">Best</a></li>
+                                <li><a href="sub.html">Best</a></li>
                                 <li><a href="#">단품</a></li>
                                 <li><a href="#">선물세트</a></li>
                                 <li><a href="#">마롱글라세</a></li>
@@ -303,7 +302,7 @@
                             깊고 자연스러운 풍미를 전합니다.</br>
                             1882년 시작된 클레망포지에의 대표 제품으로,</br>
                             전 세계 89개국에서 사랑받고 있습니다. </p>
-                        <img src="img/sec-01.png" alt="illustration" data-aos="fade-up"><!-- aos 효과 안됨 -->
+                        <img src="img/sec-01.png" alt="illustration" data-aos="fade-up" data-aos-duration="1000">
                     </div><!-- content -->
                 </div><!-- inner -->
             </section><!-- sec-01 -->
@@ -319,39 +318,39 @@
                     </div><!-- title -->
 
                     <div class="list">
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="300">
                             <img src="img/item-tube.png" alt="밤잼 튜브">
                             <p>밤잼 튜브</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="500">
                             <img src="img/item-jar.png" alt="밤잼 병">
                             <p>밤잼 병</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="700">
                             <img src="img/item-tin.png" alt="밤잼 틴">
                             <p>밤잼 틴</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="900">
                             <img src="img/item-giant.png" alt="자이언트 튜브">
                             <p>자이언트 튜브</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="1100">
                             <img src="img/item-pouch.png" alt="밤잼 파우치">
                             <p>밤잼 파우치</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="1300">
                             <img src="img/item-apple.png" alt="애플 밤잼">
                             <p>애플 밤잼</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="1500">
                             <img src="img/item-apricot.png" alt="애플살구 밤잼">
                             <p>애플살구 밤잼</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="1700">
                             <img src="img/item-strawberry.png" alt="애플딸기 밤잼">
                             <p>애플딸기 밤잼</p>
                         </div><!-- item -->
-                        <div class="item">
+                        <div class="item" data-aos="flip-left" data-aos-duration="1900">
                             <img src="img/item-gift.png" alt="마롱 글라세">
                             <p>마롱 글라세</p>
                         </div><!-- item -->
@@ -361,13 +360,13 @@
 
             <section class="sec-03">
                 <div class="inner">
-                    <div class="banner b01">
+                    <div class="banner b01" data-aos="fade-up" data-aos-duration="1000">
                         <div class="text">
                             <img src="img/colabo_logo.png" alt="콜라보로고">
                             <p>밤에 진심인 두 브랜드의 콜라보레이션</p>
                         </div><!-- text -->
                     </div><!-- banner -->
-                    <div class="banner b02">
+                    <div class="banner b02" data-aos="fade-up" data-aos-duration="1000">
                         <div class="text">
                             <strong>정기배송 서비스</strong>
                             <p>매일 먹는 밤잼을 자동으로 배송받아 보세요!</p>
@@ -376,7 +375,7 @@
                 </div><!-- inner -->
             </section><!-- sec-03 -->
 
-            <section class="sec-04">
+            <section class="sec-04" data-aos="fade-up" data-aos-duration="1000">
                 <div class="inner">
                     <div class="title">
                         <img src="img/title-background1.png" alt="title-background">
@@ -464,7 +463,7 @@
                 </div><!-- inner -->
             </section><!-- sec-04 -->
 
-            <section class="sec-05">
+            <section class="sec-05" data-aos="fade-up" data-aos-duration="1000">
                 <div class="inner">
                     <div class="title">
                         <p>follow us on</p>

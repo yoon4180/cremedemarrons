@@ -114,10 +114,13 @@
     font-weight: 500;
 }
 
+/* 리스트 시작 */
 .section .list_wrap {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative;
+    padding-bottom: 80px;
 }
 
 .section .list_wrap .order {
@@ -181,14 +184,20 @@
 }
 
 .section .list_wrap .list .item .text .info .heart {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+    transition: opacity 0.3s ease;
 }
 
 .section .list_wrap .list .item .text .info .heart img {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.section .list_wrap .list .item .text .info .heart.fill {
+    content: url('../img/icon-heartfill.png');
+    opacity: 1;
 }
 
 .section .list_wrap .list .item span {
@@ -198,4 +207,13 @@
     color: #EBF1F4;
     line-height: 29px;
     text-align: center;
+}
+
+.section .list_wrap .page {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }

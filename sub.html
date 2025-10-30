@@ -86,6 +86,44 @@
                 $(this).addClass('active');
             })
 
+            // 📌하트 클릭 시 채워지거나 취소되기
+            const hearts = document.querySelectorAll('.heart')
+
+            hearts.forEach(heart => {
+                heart.addEventListener('click', () => {
+                    heart.style.opacity = '0';
+
+                    setTimeout(() => {
+                        if (heart.classList.contains('fill')) {
+                            heart.src = 'img/icon-heart.png';
+                            heart.classList.remove('fill');
+                        } else {
+                            heart.src = 'img/icon-heartfill.png';
+                            heart.classList.add('fill');
+                        }
+
+                        heart.style.opacity = '1';
+                        heart.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            heart.style.transform = 'scale(1)';
+                        }, 300);
+                    }, 150);
+                });
+            });
+
+            // 📌페이지 수 추가
+            const pageNum = $('.num');
+            const pageAllNum = $('.all_num')
+
+            // 페이지 개수 계산
+            const pageList = ['list .item']
+            // 현재 페이지 번호
+            let currentPage = 1;
+
+            // 표시
+            pageNum.text(currentPage);
+            pageAllNum.text('/ ' + pageList.length);
+
         };//script end
     </script>
 </head>
@@ -103,7 +141,7 @@
                         <img src="img/icon-close.png" alt="메뉴닫기">
                     </button><!-- close_btn -->
                     <h1 class="logo">
-                        <a href="../index.html"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
+                        <a href="index.html"><img src="img/cremedemarrons_logo.png" alt="로고"></a>
                     </h1><!-- logo -->
                     <div class="util">
                         <button class="cart_btn">
@@ -373,9 +411,16 @@
                     </div><!-- item -->
                 </div><!-- list -->
 
-                
+                <div class="page">
+                    <span class="prev">&lt;</span>
+                    <div class="page_num">
+                        <span class="num">1</span>
+                        <span class="all_num"></span>
+                    </div><!-- page_num -->
+                    <span class="next">&gt;</span>
+                </div><!-- page -->
             </div><!-- list_wrap -->
-        </section>
+        </section><!-- #Best_Product -->
 
         <div class="bottom_nav">
             <div class="inner">
