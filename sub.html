@@ -14,7 +14,7 @@
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script>
         window.onload = () => {
-            //메뉴 열기++
+            //메뉴 열기
             let menuBtn = document.querySelector('.menu_btn');
             let closeBtn = document.querySelector('.close_btn');
             let nav = document.querySelector('.nav');
@@ -56,36 +56,6 @@
                 });
             });//
 
-            // 📌cat-gnb 메뉴바
-            let menuWidth = $('.cat-depth-01').outerWidth();
-            $('.cat-gnb .menu_bar').width(menuWidth);
-
-            // depth-01 클릭 시 
-            $('.cat-depth-01').on('click', function () {
-                // depth-01의 메뉴바 이동
-                let moveLeft = $(this).position().left;
-                let moveWidth = $(this).outerWidth();
-                $('.cat-gnb .menu_bar').stop().animate({
-                    'left': moveLeft,
-                    'width': moveWidth
-                }, 200);
-
-                // 모두 닫기
-                $('.cat-depth-02').removeClass('active');
-                $('.cat-depth-01').removeClass('active');
-
-                // 클릭한 depth-01의 02만 열기
-                $(this).addClass('active');
-                $(this).siblings('.cat-depth-02').addClass('active');
-            });
-
-
-            // depth-02 클릭 시
-            $('.cat-depth-02 li a').on('click', function () {
-                $('.cat-depth-02 li a').removeClass('active');
-                $(this).addClass('active');
-            })
-
             // 📌하트 클릭 시 채워지거나 취소되기
             const hearts = document.querySelectorAll('.heart')
 
@@ -120,9 +90,42 @@
             // 현재 페이지 번호
             let currentPage = 1;
 
-            // 표시 00000
+            // 표시
             pageNum.text(currentPage);
             pageAllNum.text('/ ' + pageList.length);
+
+
+
+            //################### 카테고리 스크립트
+            // 모든 depth-02 숨기기
+            $('.depth-02').hide();
+
+            // 👉 디폴트
+            $('.depth-02[data-parent="shop"]').show();
+            $('.depth-01 a[data-menu="shop"]').addClass('active');
+            $('.depth-02[data-parent="shop"] a:contains("Best")').addClass('active');
+
+            // 📌 1차 메뉴 클릭 시
+            $('.depth-01 a').on('click', function (e) {
+                e.preventDefault();
+                const menu = $(this).data('menu');
+
+                // 1차 메뉴 활성화 토글
+                $('.depth-01 a').removeClass('active');
+                $(this).addClass('active');
+
+                // 2차 메뉴 표시
+                $('.depth-02').slideUp(150);
+                $(`.depth-02[data-parent="${menu}"]`).slideDown(200);
+            });
+
+            // 📌 2차 메뉴 클릭 시 active 처리
+            $('.depth-02 a').on('click', function (e) {
+                e.preventDefault();
+                $('.depth-02 a').removeClass('active');
+                $(this).addClass('active');
+            });
+
 
         };//script end
     </script>
@@ -223,61 +226,45 @@
         </header><!-- header -->
 
         <div class="category">
-            <ul class="cat-gnb">
-                <li>
-                    <a href="#" class="cat-depth-01">
-                        SHOP
-                    </a>
-                    <ul class="cat-depth-02">
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Best</a></li>
-                        <li><a href="#">단품</a></li>
-                        <li><a href="#">선물세트</a></li>
-                        <li><a href="#">마롱글라세</a></li>
-                        <li><a href="#">벌크(업소용)</a></li>
-                        <li><a href="#">정기구독</a></li>
-                        <li><a href="#">대량주문</a></li>
-                    </ul><!-- depth-02 -->
-                </li>
-                <li>
-                    <a href="#" class="cat-depth-01">
-                        EVENT
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="cat-depth-01">
-                        BRAND
-                    </a>
-                    <ul class="cat-depth-02">
-                        <li><a href="#">소개</a></li>
-                        <li><a href="#">매장안내</a></li>
-                    </ul><!-- depth-02 -->
-                </li>
-                <li>
-                    <a href="#" class="cat-depth-01">
-                        COMMUNITY
-                    </a>
-                    <ul class="cat-depth-02">
-                        <li><a href="#">취향저격 레시피</a></li>
-                        <li><a href="#">뉴스</a></li>
-                    </ul><!-- depth-02 -->
-                </li>
-                <li>
-                    <a href="#" class="cat-depth-01">
-                        B2B
-                    </a>
-                    <ul class="cat-depth-02">
-                        <li><a href="#">밤잼성과</a></li>
-                        <li><a href="#">콜라보레이션</a></li>
-                        <li><a href="#">스토어</a></li>
-                        <li><a href="#">입점제안문의</a></li>
-                    </ul><!-- depth-02 -->
-                </li>
+            <!-- 1차 메뉴 -->
+            <ul class="cat-gnb depth-01">
+                <li><a href="#" data-menu="shop">SHOP</a></li>
+                <li><a href="#" data-menu="event">EVENT</a></li>
+                <li><a href="#" data-menu="brand">BRAND</a></li>
+                <li><a href="#" data-menu="community">COMMUNITY</a></li>
+                <li><a href="#" data-menu="b2b">B2B</a></li>
+            </ul>
 
-                <div class="menu_bar">
-                    <span>메뉴바</span>
-                </div><!-- menu_bar -->
-            </ul><!-- gnb -->
+            <!-- 2차 메뉴들 (각각의 1차와 대응) -->
+            <ul class="cat-gnb depth-02" data-parent="shop">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Best</a></li>
+                <li><a href="#">단품</a></li>
+                <li><a href="#">선물세트</a></li>
+                <li><a href="#">마롱글라세</a></li>
+                <li><a href="#">벌크(업소용)</a></li>
+                <li><a href="#">정기구독</a></li>
+                <li><a href="#">대량주문</a></li>
+            </ul>
+
+            <ul class="cat-gnb depth-02" data-parent="brand">
+                <li><a href="#">소개</a></li>
+                <li><a href="#">매장안내</a></li>
+            </ul>
+
+            <ul class="cat-gnb depth-02" data-parent="community">
+                <li><a href="#">취향저격 레시피</a></li>
+                <li><a href="#">뉴스</a></li>
+            </ul>
+
+            <ul class="cat-gnb depth-02" data-parent="b2b">
+                <li><a href="#">밤잼성과</a></li>
+                <li><a href="#">콜라보레이션</a></li>
+                <li><a href="#">스토어</a></li>
+                <li><a href="#">입점제안문의</a></li>
+            </ul>
+
+
         </div><!-- category -->
 
         <section class="section" id="Best_Product">
