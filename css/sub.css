@@ -46,7 +46,8 @@
     -webkit-overflow-scrolling: touch;
     padding: 10px 7.5px;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    scrollbar-width: none;
     gap: 6px;
     background-color: #ffffff;
 }
